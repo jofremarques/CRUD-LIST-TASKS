@@ -6,12 +6,12 @@ class Home extends BaseControllers
 {
     public function index(): void
     {
-        $this->view("/globals/header");
-        $this->view("/index");
-        $this->view("/globals/footer");
-        $this->view("/components/modal/add");
-        $this->view("/components/modal/delet");
-        $this->view("/components/modal/details");
-        $this->view("/components/modal/edit");
+        $this->view("globals/header");
+        $this->view("index");
+        $this->view("globals/footer");
+        $this->view("components/modals/add");
+        $this->view("components/modals/delete");
+        $this->view("components/modals/details");
+        $this->view("components/modals/edit");
     }
 }
