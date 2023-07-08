@@ -1,0 +1,40 @@
+
+.flex {
+    display: flex;
+  }
+  
+  .align-items {
+    align-items: center;
+  }
+  
+  .mb-1 {
+    margin-bottom: 1rem;
+  }
+  .mr-1 {
+    margin-right: 1rem;
+  }
+  .ml-1 {
+    margin-left: 1rem;
+  }
+  
+  .mb-2 {
+    margin-bottom: 2rem;
+  }
+  .mr-2 {
+    margin-right: 2rem;
+  }
+  .ml-2 {
+    margin-left: 2rem;
+  }
+  
+  .justify-end {
+    justify-content: end;
+  }
+  
+  .justify-arround {
+    justify-content: space-around;
+  }
+  
+  .justify-between {
+    justify-content: space-between;
+  }
