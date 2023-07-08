@@ -1,5 +1,4 @@
 table {
-  border: 1px solid black;
   margin: 0 auto;
   padding: 1rem;
   text-transform: capitalize;
@@ -10,6 +9,7 @@ table {
   border-spacing: 0;
   border-radius: 0.5rem;
 }
+
 table thead,
 table tbody,
 table tfoot {
@@ -18,21 +18,21 @@ table tfoot {
   border-color: inherit;
 }
 
-tfoot tr td {
-  border-top: 1px solid black;
+tfoot tr td,
+tbody tr td {
+  border-top: 1px solid var(--color-commun-black);
 }
 
-table tbody td{
+table tbody td {
   text-transform: uppercase;
   font-size: 0.85rem;
-  border: 1px solid black;
   border-bottom-width: 0px;
   border-left-width: 0px;
   padding: 0.5rem;
 }
 
 table tbody tr:nth-child(even) {
-  background: #f2f2f2;
+  background: var(--color-black-White);
 }
 
 thead tr th,
@@ -49,37 +49,51 @@ tbody select {
 }
 
 button.btn-remove {
-  background: #dc3545;
+  background: var(--color-danger);
   border: none;
-  padding: 0.2rem;
+  padding: 0.3rem;
   cursor: pointer;
 }
 
 button.btn-remove svg {
   width: 15px;
-  fill: #fff;
+  fill: var(--color-commun-White);
   height: 15px;
 }
 
 button.btn-edit {
-  background: #468eec;
+  background: var(--color-primary);
   border: none;
-  padding: 0.2rem;
+  padding: 0.3rem;
   cursor: pointer;
 }
 
 button.btn-edit svg {
   width: 15px;
-  fill: #fff;
+  fill: var(--color-commun-White);
   height: 15px;
 }
 
 button.btn-details {
-  background: #468eec;
-  border: none;
-  padding: 0.2rem 0.5rem;
-  border-radius: 5px ;
-  cursor: pointer;
-  color: #fff;
+  padding: 0.5rem 1rem;
+  background: var(--color-primary);
+  color: var(--color-commun-White);
   font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+table input[type="checkbox"] {
+  appearance: none;
+  border: 1px solid var(--color-commun-black);
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 4px;
+}
+table input[type="checkbox"]:checked {
+  background-image: url("../../img/checked.png");
+  background-size: contain;
+  background-position: center center;
+  border: 1px solid var(--color-primary);
 }

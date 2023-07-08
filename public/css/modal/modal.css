@@ -10,7 +10,7 @@
 .content-modal {
   margin: 30vh auto;
   max-width: 600px;
-  background-color: #fff;
+  background-color: var(--color-commun-White);
   border-radius: 8px;
 }
 
@@ -18,12 +18,12 @@
   padding: 1px 18px;
   justify-content: space-between;
   align-items: center;
-  border-bottom: solid #eee 1px;
+  border-bottom: solid var(--color-commun-White) 1px;
 }
 
 button.confirm-modal {
-  color: #fff;
-  background: #28a745;
+  color: var(--color-commun-White);
+  background: var(--color-sucess);
   padding: 0.5rem 1rem;
   font-size: 1rem;
   border: none;
@@ -32,8 +32,8 @@ button.confirm-modal {
 }
 
 button.close-modal {
-  color: #fff;
-  background: #dc3545;
+  color: var(--color-commun-White);
+  background: var(--color-danger);
   padding: 0.5rem 1rem;
   font-size: 1rem;
   border: none;
@@ -41,9 +41,9 @@ button.close-modal {
 }
 
 span.close-modal {
-  color: #fff;
-  background: #dc3545;
-  padding: 0.2rem;
+  color: var(--color-commun-White);
+  background: var(--color-danger);
+  padding: 0.1rem 0.3rem;
   font-size: 1rem;
   border: none;
   cursor: pointer;
@@ -58,7 +58,7 @@ h1.title-modal {
   padding: 1px 15px 8px;
 }
 .footer-modal {
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--color-commun-White);
   padding: 18px;
   display: flex;
   justify-content: end;
