@@ -1,3 +1,10 @@
+@import url(./components/modal.css);
+@import url(./components/table.css);
+@import url(./config/colors.css);
+@import url(./config/font.css);
+@import url(./config/globals.css);
+@import url(./tools/grid.css);
+
 .main {
   width: 100%;
   height: 100%;
@@ -73,11 +80,11 @@
   transition: 0.25s all;
   font-size: 1.2rem;
 }
-.main .nav .menu ul li:hover{
+.main .nav .menu ul li:hover {
   color: var(--color-primary);
 }
 
-.main .nav .menu ul li:hover ul{
+.main .nav .menu ul li:hover ul {
   color: var(--color-commun-black);
   font-size: 1rem;
 }
@@ -109,7 +116,6 @@
   font-size: 1rem;
 }
 
-
 header .logo-title {
   max-width: 1300px;
   margin: 0 auto;
@@ -121,7 +127,7 @@ header h1 {
   font-size: 1.5em;
   font-weight: 700;
   padding: 0.5rem;
-  color: var(--color-commun-White);;
+  color: var(--color-commun-White);
 }
 
 .title h1,

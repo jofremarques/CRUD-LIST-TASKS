@@ -1,12 +1,13 @@
 :root {
-  --color-primary: rgb(70, 142, 236);
-  --color-primary-hover: #468eeccf;
-  --color-danger: #dc3545;
-  --color-sucess: #28a745;
-  --color-commun-White: #fff;
-  --color-black-White: #fff;
-  --color-commun-black: #000;
-  --color-black-gray: #5555554b;
-  --color-commun-gray: #555;
-  --color-white-gray: rgba(227, 234, 235, 0.8);
-}
+    --color-primary: rgb(70, 142, 236);
+    --color-primary-hover: #468eeccf;
+    --color-danger: #dc3545;
+    --color-sucess: #28a745;
+    --color-commun-White: #fff;
+    --color-black-White: #fff;
+    --color-commun-black: #000;
+    --color-black-gray: #5555554b;
+    --color-commun-gray: #555;
+    --color-white-gray: rgba(227, 234, 235, 0.8);
+  }
+  
