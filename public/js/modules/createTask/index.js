@@ -44,11 +44,11 @@ export function CreateTask() {
             table.appendChild(lineTask({
                 dateValue: payload.entrega,
                 idValue: id,
-                selectValue: payload.status,
+                priorityValue:payload.prioridade,
+                statusValue: payload.status,
                 titleValue: payload.titulo
             }))
             handleModal();
-            
 
             inputs.forEach((input)=>{
                 input.value = '';

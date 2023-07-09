@@ -18,11 +18,6 @@
   margin-right: 0.5rem;
   padding: 2rem 0;
 }
-@media only screen and (max-width: 780px) {
-  .main .nav {
-    width: 150px;
-  }
-}
 
 .main .view {
   position: relative;
@@ -30,12 +25,32 @@
   min-height: 22vh;
 }
 
+@media only screen and (max-width: 780px) {
+  .main .nav {
+    width: 150px;
+  }
+  .main .view .content {
+    max-width: 550px;
+    overflow-x: auto;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .main {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .main .nav {
+    width: 100%;
+    padding: 0;
+  }
+}
+
 .main .view .viewHeader {
   padding: 1rem;
 }
 
 .main .nav .menu {
-  width: 100%;
   margin: 15px;
   color: var(--color-commun-gray);
 }
@@ -65,8 +80,24 @@
     font-size: 0.91rem;
   }
 
-  .main .nav .menu ul li  {
+  .main .nav .menu ul li {
     font-size: 0.91rem;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .main .nav .menu ul li ul {
+    display: flex;
+  }
+
+  .main .nav .menu ul li ul li{
+    margin: 0 1rem 0 0;
+  }
+  .viewHeader .content-button{
+    margin-top: 2rem;
+    width: 100%;
+    justify-content: end;
+    display: flex;
   }
 }
 
@@ -112,7 +143,6 @@ header .logo-title {
 }
 
 header h1 {
-  width: 40%;
   float: left;
   font-size: 1.5em;
   font-weight: 700;

@@ -1,7 +1,7 @@
 <div id="edit-modal" class="modal" data-modal='edit-modal'>
     <div class="content-modal">
         <div class="head-modal flex">
-            <h1 class="title-modal">Editar tarefa XXXX</h1>
+            <h1 class="title-modal">Editar tarefa <span data-edit-ref='titulo'></span></h1>
             <span class="head-modal-fechar close-modal" data-close-modal='edit-modal'>X</span>
         </div>
         <div class="body-modal">
@@ -51,7 +51,7 @@
             </div>
         </div>
         <div class="footer-modal">
-            <button class="confirm-modal">Confirmar</button>
+            <button class="confirm-modal" data-confirm-modal='edit'>Confirmar</button>
             <button class="close-modal" data-close-modal='edit-modal'>Fechar</button>
         </div>
     </div>

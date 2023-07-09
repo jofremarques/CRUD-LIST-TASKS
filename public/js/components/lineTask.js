@@ -1,14 +1,13 @@
 import { pencilIcon } from "./icons/pencil.js";
 import { tashIcon } from "./icons/trash.js";
-import { select } from "./shared/select.js";
 
-export function lineTask({idValue, titleValue, dateValue, selectValue} = {}){
+export function lineTask({idValue, titleValue, dateValue, priorityValue, statusValue} = {}){
     const tr = document.createElement("tr")
 
-    const colInput = document.createElement("td");
-    colInput.style.width = '5%';
-    colInput.innerHTML = idValue;
-    colInput.setAttribute("data-task-id", idValue)
+    const colId = document.createElement("td");
+    colId.style.width = '5%';
+    colId.innerHTML = idValue;
+    colId.setAttribute("data-task-id", idValue)
 
     const colTitle = document.createElement("td");
     colTitle.innerText = titleValue;
@@ -18,11 +17,13 @@ export function lineTask({idValue, titleValue, dateValue, selectValue} = {}){
     colDate.innerText = dateValue;
     colDate.setAttribute("data-ref", "entrega")
 
-    const colSelect = document.createElement("td");
-    colSelect.appendChild(select({
-        defaulValue: selectValue
-    }));
-    colSelect.setAttribute("data-ref", "status")
+    const colPriority = document.createElement("td");
+    colPriority.innerHTML = priorityValue;
+    colPriority.setAttribute("data-ref", "priority")
+
+    const colStatus = document.createElement("td");
+    colStatus.innerHTML = statusValue;
+    colStatus.setAttribute("data-ref", "status")
 
     const colBtnDetails = document.createElement("td");
     const btnDetails = document.createElement('button');
@@ -47,7 +48,7 @@ export function lineTask({idValue, titleValue, dateValue, selectValue} = {}){
     btnRemove.setAttribute("data-task-target", idValue)
     colBtnRemove.appendChild(btnRemove);
 
-    [colInput, colTitle, colDate, colSelect, colBtnDetails, colBtnEdit, colBtnRemove].forEach((td)=>{
+    [colId, colTitle, colDate, colPriority, colStatus, colBtnDetails, colBtnEdit, colBtnRemove].forEach((td)=>{
         tr.appendChild(td)
     })
 

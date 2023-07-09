@@ -1,7 +1,7 @@
 <div id="details-modal" class="modal" data-modal='details-modal'>
     <div class="content-modal">
         <div class="head-modal flex">
-            <h1 class="title-modal">Detalhes tarefa XXXX</h1>
+            <h1 class="title-modal">Detalhes tarefa <span data-details-ref='titulo'></span></h1>
             <span class="head-modal-fechar close-modal" data-close-modal='details-modal'>X</span>
         </div>
         <div class="body-modal">
@@ -9,13 +9,13 @@
                 <div class="box">
                     <div class="form-group">
                         <label for="titulo">Titulo:</label>
-                        <input type="text" id="titulo">
+                        <span></span>
                     </div>
                 </div>
                 <div class="box ">
                     <div class="form-group">
                         <label for="descricao">Descrição:</label>
-                        <input type="text" id="descricao">
+                        <span></span>
                     </div>
                 </div>
             </div>
@@ -23,21 +23,13 @@
                 <div class="box">
                     <div class="form-group">
                         <label for="">Prioridade:</label>
-                        <select name="prioridade" id="prioridade">
-                            <option value="baixa">baixa</option>
-                            <option value="media">Media</option>
-                            <option value="alta">Alta</option>
-                        </select>
+                        <span></span>
                     </div>
                 </div>
                 <div class="box ">
                     <div class="form-group">
                         <label for="">Status:</label>
-                        <select name="prioridade" id="prioridade">
-                            <option value="baixa">baixa</option>
-                            <option value="media">Media</option>
-                            <option value="alta">Alta</option>
-                        </select>
+                        <span></span>
                     </div>
                 </div>
             </div>
@@ -45,14 +37,10 @@
                 <div class="box">
                     <div class="form-group">
                         <label for="">Prazo de entrega:</label>
-                        <input type="date" name="entrega" id="entrega">
+                        <span></span>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="footer-modal">
-            <button class="confirm-modal">Confirmar</button>
-            <button class="close-modal" data-close-modal='details-modal'>Fechar</button>
         </div>
     </div>
 </div>

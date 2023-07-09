@@ -54,6 +54,12 @@ h1.title-modal {
   margin: 10px 0;
 }
 
+@media only screen and (max-width: 580px) {
+  h1.title-modal {
+    font-size: 2rem;
+  }
+}
+
 .body-modal {
   padding: 1px 15px 8px;
 }

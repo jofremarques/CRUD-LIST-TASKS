@@ -46,16 +46,8 @@
                                 <td style="width: 5%" data-task-id="1"> 1</td>
                                 <td data-ref="titulo">Tarefa 01</td>
                                 <td data-ref="entrega">06/07/2023</td>
-                                <td data-ref="status">
-                                    <div class="info">
-                                        <select name="status" id="status">
-                                            <option value="processando">Processando</option>
-                                            <option value="em-andamento">Em andamento</option>
-                                            <option value="cancelado">Cancelado</option>
-                                            <option value="finalizado">Finalizado</option>
-                                        </select>
-                                    </div>
-                                </td>
+                                <td data-ref="prioridade">prioridade</td>
+                                <td data-ref="status">Processando</td>
                                 <td>
                                     <button class="btn-details" data-button-modal='details-modal'>
                                         Detalhes
@@ -80,10 +72,10 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td>Id</td>
+                                <td><strong>Id</strong></td>
                                 <td><strong>Titulo</strong></td>
                                 <td><strong>Data de criação</strong></td>
-                                <td><strong>prioridade</strong></td>
+                                <td><strong>Prioridade</strong></td>
                                 <td style="width: 20%;padding: 0;"><strong>Status</strong></td>
                                 <td style="width: 10%;padding: 0;"></td>
                                 <td style="width: 3%;padding: 0;"></td>

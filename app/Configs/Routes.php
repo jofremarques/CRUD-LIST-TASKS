@@ -14,6 +14,11 @@ class Routes
                 "controller" => "Home",
                 "method" => "index",
                 "title" => "Home"
+            ],
+            "api/tasks" => (object)[
+                "controller" => "Home",
+                "method" => "index",
+                "title" => "Home"
             ]
         ];
     }

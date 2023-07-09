@@ -22,14 +22,6 @@ header .logo-title {
   margin: 0 auto;
 }
 
-header h1 {
-  width: 40%;
-  float: left;
-  font-size: 1.5em;
-  font-weight: 700;
-  padding: 0.5rem;
-}
-
 .title h1,
 .title h2,
 .title h3 {
