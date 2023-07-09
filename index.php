@@ -17,9 +17,14 @@ $config = $app->init();
     <?php foreach (HEADER_METATAGS as $metatag) : ?>
         <meta name="<?= $metatag['label'] ?>" content="<?= $metatag['value'] ?>">
     <?php endforeach; ?>
+    <link rel="stylesheet" href="public/css/style.css">
+    <script src="public/js/jquery-3.7.0.min.js"></script>
+    <link rel="shortcut icon" href="public/img/fav-icon.ico" type="image/x-icon">
 </head>
 
 <body>
     <?= $config['view'] ?>
+    <script type="module" src="public/js/script.js"></script>
 </body>
+
 </html>

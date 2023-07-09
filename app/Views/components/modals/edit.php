@@ -1,8 +1,8 @@
-<div id="edit-modal" class="modal">
+<div id="edit-modal" class="modal" data-modal='edit-modal'>
     <div class="content-modal">
         <div class="head-modal flex">
             <h1 class="title-modal">Editar tarefa XXXX</h1>
-            <span class="head-modal-fechar close-modal" onclick="closeModal('edit-modal')">X</span>
+            <span class="head-modal-fechar close-modal" data-close-modal='edit-modal'>X</span>
         </div>
         <div class="body-modal">
             <div class="row-modal flex justify-arround">
@@ -52,7 +52,7 @@
         </div>
         <div class="footer-modal">
             <button class="confirm-modal">Confirmar</button>
-            <button class="close-modal" onclick="closeModal('edit-modal')">Fechar</button>
+            <button class="close-modal" data-close-modal='edit-modal'>Fechar</button>
         </div>
     </div>
 </div>
