@@ -31,7 +31,7 @@
                     <table>
                         <thead>
                             <tr>
-                                <th></th>
+                                <th>Id</th>
                                 <th>Titulo</th>
                                 <th>Data de criação</th>
                                 <th>prioridade</th>
@@ -43,11 +43,10 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td style="width: 5%"> <input type="checkbox"></td>
-                                <td>Tarefa 01</td>
-                                <td>06/07/2023</td>
-                                <td>prioridade</td>
-                                <td>
+                                <td style="width: 5%" data-task-id="1"> 1</td>
+                                <td data-ref="titulo">Tarefa 01</td>
+                                <td data-ref="entrega">06/07/2023</td>
+                                <td data-ref="status">
                                     <div class="info">
                                         <select name="status" id="status">
                                             <option value="processando">Processando</option>
@@ -81,7 +80,7 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td></td>
+                                <td>Id</td>
                                 <td><strong>Titulo</strong></td>
                                 <td><strong>Data de criação</strong></td>
                                 <td><strong>prioridade</strong></td>
