@@ -1,23 +1,28 @@
 import { pencilIcon } from "./icons/pencil.js";
 import { tashIcon } from "./icons/trash.js";
-import { input } from "./shared/input.js";
 import { select } from "./shared/select.js";
 
-export function lineTask(){
+export function lineTask({idValue, titleValue, dateValue, selectValue} = {}){
     const tr = document.createElement("tr")
 
     const colInput = document.createElement("td");
     colInput.style.width = '5%';
-    colInput.appendChild(input('checkbox'));
+    colInput.innerHTML = idValue;
+    colInput.setAttribute("data-task-id", idValue)
 
     const colTitle = document.createElement("td");
-    colTitle.innerText = 'Tarefa 01';
+    colTitle.innerText = titleValue;
+    colTitle.setAttribute("data-ref", "titulo")
 
     const colDate = document.createElement("td");
-    colDate.innerText = '06/07/2023';
+    colDate.innerText = dateValue;
+    colDate.setAttribute("data-ref", "entrega")
 
     const colSelect = document.createElement("td");
-    colSelect.appendChild(select());
+    colSelect.appendChild(select({
+        defaulValue: selectValue
+    }));
+    colSelect.setAttribute("data-ref", "status")
 
     const colBtnDetails = document.createElement("td");
     const btnDetails = document.createElement('button');
@@ -31,6 +36,7 @@ export function lineTask(){
     btnEdit.className = 'btn-edit';
     btnEdit.dataset.buttonModal = 'edit-modal';
     btnEdit.innerHTML= pencilIcon();
+    btnEdit.setAttribute("data-task-target", idValue)
     colBtnEdit.appendChild(btnEdit);
 
     const colBtnRemove = document.createElement('td');
@@ -38,15 +44,12 @@ export function lineTask(){
     btnRemove.className = 'btn-remove';
     btnRemove.dataset.buttonModal = 'delete-modal';
     btnRemove.innerHTML= tashIcon();
+    btnRemove.setAttribute("data-task-target", idValue)
     colBtnRemove.appendChild(btnRemove);
 
-    tr.appendChild(colInput);
-    tr.appendChild(colTitle);
-    tr.appendChild(colDate);
-    tr.appendChild(colSelect);
-    tr.appendChild(colBtnDetails);
-    tr.appendChild(colBtnEdit);
-    tr.appendChild(colBtnRemove);
+    [colInput, colTitle, colDate, colSelect, colBtnDetails, colBtnEdit, colBtnRemove].forEach((td)=>{
+        tr.appendChild(td)
+    })
 
     return tr;
 }

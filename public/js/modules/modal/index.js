@@ -1,8 +1,11 @@
+import { WhenOpenDeleteModal } from "../WhenOpenDeleteModal/index.js";
 
 export function handleModal(){
+    const whenOpenDeleteModal = new WhenOpenDeleteModal();
 
-    let btns = document.querySelectorAll('[data-button-modal]');
-    let closeBtns = document.querySelectorAll('[data-close-modal]');
+    const btns = document.querySelectorAll('[data-button-modal]');
+    const closeBtns = document.querySelectorAll('[data-close-modal]');
+    const deleteBtns = document.querySelectorAll('[data-button-modal="delete-modal"]');
 
     btns.forEach(btn => {   
         $(btn).click(function(e) {
@@ -19,5 +22,9 @@ export function handleModal(){
             let modal = document.querySelector(`[data-modal=${refModal}]`);
             $(modal).hide();
         });
+    })
+
+    deleteBtns.forEach(deleteBtns => {
+        $(deleteBtns).click(whenOpenDeleteModal.handle);
     })
 }
