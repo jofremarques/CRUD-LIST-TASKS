@@ -14,9 +14,14 @@
 
 .main .nav {
   width: 200px;
-  height: 100%;
   background-color: var(--color-white-gray);
-  margin-right: 1rem;
+  margin-right: 0.5rem;
+  padding: 2rem 0;
+}
+@media only screen and (max-width: 780px) {
+  .main .nav {
+    width: 150px;
+  }
 }
 
 .main .view {
@@ -25,34 +30,8 @@
   min-height: 22vh;
 }
 
-.main .view .viewHeader,
-.main .view .content {
+.main .view .viewHeader {
   padding: 1rem;
-}
-
-.main .nav .searchbox {
-  width: 170px;
-  height: 30px;
-  line-height: 30px;
-  margin: 15px;
-  background-color: var(--color-commun-White);
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-  position: relative;
-}
-.searchbox .icon {
-  position: absolute;
-  top: 6px;
-  left: 5px;
-  fill: var(--color-commun-gray);
-}
-.searchbox input {
-  padding: 0.3rem 0.3rem 0.3rem 2rem;
-  width: 11rem;
-  border: 1px solid var(--color-black-gray);
-  outline: 0;
-  border-radius: 4px;
 }
 
 .main .nav .menu {
@@ -80,6 +59,17 @@
   transition: 0.25s all;
   font-size: 1.2rem;
 }
+
+@media only screen and (max-width: 780px) {
+  .main .nav .menu ul {
+    font-size: 0.91rem;
+  }
+
+  .main .nav .menu ul li  {
+    font-size: 0.91rem;
+  }
+}
+
 .main .nav .menu ul li:hover {
   color: var(--color-primary);
 }

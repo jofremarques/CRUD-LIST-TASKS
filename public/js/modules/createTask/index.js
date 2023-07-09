@@ -26,9 +26,7 @@ export function CreateTask() {
                }
                erros.push(1)
             } else{
-                payload={
-                    
-                }
+                payload[input.name] = input.value
             }
         });
         

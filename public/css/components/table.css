@@ -41,6 +41,13 @@ tfoot tr td {
   font-size: 1.1rem;
 }
 
+@media only screen and (max-width: 780px) {
+  thead tr th,
+  tfoot tr td {
+    font-size: 0.8rem;
+  }
+}
+
 tbody select {
   width: 100%;
   text-transform: uppercase;
