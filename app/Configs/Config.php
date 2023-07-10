@@ -7,7 +7,8 @@ class Config
     public array $files = [
         "routes" => "/Routes",
         "baseControllers" => "../Controllers/BaseControllers",
-        "database" => "/Database"
+        "database" => "/Database",
+        "baseModels"=> "../Models/BaseModels"
     ];
 
     /**  DATABSE CONFIGS  */

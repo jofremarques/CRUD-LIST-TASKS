@@ -9,7 +9,12 @@ class Database
 {
     protected PDO $instances;
 
-    public static function getInstance(): PDO
+    public function __construct()
+    {
+        $this->getInstance();
+    }
+
+    public function getInstance(): PDO
     {
         try {
             $config = new Config();
@@ -18,11 +23,11 @@ class Database
             $pdo = new PDO($database['type'] . ':host=' . $database['hostname'] . ';dbname=' . $database['name'], $database['username'], $database['password']);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            if (!isset(self::$instances['pdo'])) {
-                self::$instances['pdo'] = $pdo;
+            if (!isset($this->instances)) {
+                $this->instances = $pdo;
             }
 
-            return self::$instances['pdo'];
+            return $this->instances;
         } catch (PDOException $e) {
             echo 'Error: ' . $e->getMessage();
         };

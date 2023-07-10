@@ -1,8 +1,8 @@
 <?php
 
-use App\Models\BaseModel;
+use App\Models\BaseModels;
 
-class TaskEntity extends BaseModel
+class TaskEntity extends BaseModels
 {
     protected string $table = 'tasks';
     protected string $primaryKey = 'id';

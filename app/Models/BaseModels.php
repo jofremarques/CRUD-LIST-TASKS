@@ -5,10 +5,10 @@ namespace App\Models;
 use App\Configs\Database;
 use PDO;
 
-abstract class BaseModel extends Database
+abstract class BaseModels extends Database
 {
     protected string $table;
-    protected array $columns;
+    protected array $columns = [];
 
     public function getQueryColumns(array $queryString): Object
     {
@@ -20,9 +20,9 @@ abstract class BaseModel extends Database
         ];
     }
 
-    public function findFirst(array $where = [], ?String $options = '', array $columns): Object
+    public function findFirst(array $where = [], ?String $options = '', array $columns = []): Object
     {
-        $connect = $this->instances['pdo'];
+        $connect = $this->instances;
         $table = $this->table;
 
         $queryColumns = array_map(function ($index, $value) {
@@ -37,9 +37,9 @@ abstract class BaseModel extends Database
         return count($founds->fetch(PDO::FETCH_ASSOC)) == 0 ? null : $founds->fetch(PDO::FETCH_ASSOC)[0];
     }
 
-    public function findMany(array $where = [], ?String $options = '', array $columns): array
+    public function findMany(array $where = [], ?String $options = '', array $columns = []): array
     {
-        $connect = $this->instances['pdo'];
+        $connect = $this->instances;
         $table = $this->table;
 
         $queryColumns = array_map(function ($index, $value) {
@@ -47,16 +47,16 @@ abstract class BaseModel extends Database
         }, array_keys($where), array_values($where));
 
         $queryString =  count($queryColumns) > 0 ? join(",", $queryColumns) : "1=1";
-        $getColumns = join(",", $columns);
+        $getColumns = empty(join(",", $columns)) ? "*" : join(",", $columns);
 
         $founds = $connect->query("SELECT $getColumns FROM $table WHERE $queryString $options");
 
-        return $founds->fetch(PDO::FETCH_ASSOC);
+        return $founds->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function save(array $queryString): int|string
     {
-        $connect = $this->instances['pdo'];
+        $connect = $this->instances;
         $table = $this->table;
 
         $queryColumns = $this->getQueryColumns($queryString);
@@ -68,9 +68,9 @@ abstract class BaseModel extends Database
     }
 
 
-    public function update(array $where = [], array $data): int|string
+    public function update(array $where = [], array $data = []): int|string
     {
-        $connect = $this->instances['pdo'];
+        $connect = $this->instances;
         $table = $this->table;
 
         $queryColumns = array_map(function ($index, $value) {
@@ -91,17 +91,15 @@ abstract class BaseModel extends Database
 
     public function delete(array $where = []): void
     {
-        $connect = $this->instances['pdo'];
+        $connect = $this->instances;
         $table = $this->table;
 
         $queryColumns = array_map(function ($index, $value) {
-            return "$index = :$value";
+            return "$index = $value";
         }, array_keys($where), array_values($where));
 
         $queryString =  count($queryColumns) > 0 ? join(",", $queryColumns) : "1=1";
 
-        $stmt = $connect->prepare("DELETE FROM $table WHERE $queryString");
-        $stmt->bindParam($where);
-        $stmt->execute();
+        $connect->query("DELETE FROM $table WHERE $queryString");
     }
 }

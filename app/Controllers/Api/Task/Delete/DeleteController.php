@@ -2,6 +2,8 @@
 
 namespace App\Controllers\Api\Task\Delete;
 
+include __DIR__ . './DeleteUseCases.php';
+
 use App\Controllers\BaseControllers;
 use Exception;
 
@@ -17,14 +19,14 @@ class DeleteController extends BaseControllers
     public function handle()
     {
         try {
-  
+            parse_str(file_get_contents("php://input"), $payload);
             $responseDelete = $this->deleteUseCases->execute($payload);
 
-            return $this->response->setJSON($responseDelete)->setStatusCode(200);
+            $this->response($responseDelete);
         } catch (Exception $err) {
-            return $this->response->setJSON((object)[
+            $this->response((object)[
                 "error" => $err->getMessage() ? $err->getMessage() : 'Did something wrong happen'
-            ])->setStatusCode($err->getCode() ? $err->getCode() : 500);
+            ], $err->getCode() < 400 && $err->getCode() > 406 ? $err->getCode() : 500);
         }
     }
 }

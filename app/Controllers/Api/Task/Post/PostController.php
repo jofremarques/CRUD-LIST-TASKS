@@ -2,7 +2,8 @@
 
 namespace App\Controllers\Api\Task\Post;
 
-use App\Api\Payments\Post\PostUseCases;
+include __DIR__ . './PostUseCases.php';
+
 use App\Controllers\BaseControllers;
 use Exception;
 
@@ -18,14 +19,15 @@ class PostController extends BaseControllers
     public function handle()
     {
         try {
-
+            $payload = file_get_contents('php://input');
+            var_dump($payload);
             $responsePost = $this->postUseCases->execute($payload);
 
-            return $this->response->setJSON($responsePost)->setStatusCode(200);
+            $this->response($responsePost);
         } catch (Exception $err) {
-            return $this->response->setJSON((object)[
+            $this->response((object)[
                 "error" => $err->getMessage() ? $err->getMessage() : 'Did something wrong happen'
-            ])->setStatusCode($err->getCode() ? $err->getCode() : 500);
+            ], $err->getCode() < 400 && $err->getCode() > 406 ? $err->getCode() : 500);
         }
     }
 }

@@ -38,7 +38,7 @@ export function CreateTask() {
             method: 'POST',
             data: payload,
             context: document.body 
-          }).done(function({id = 2} = {}) {
+          }).done(function({id = 2, sucesso} = {}) {
             const table = document.querySelector('table tbody')
 
             table.appendChild(lineTask({

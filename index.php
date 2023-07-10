@@ -23,7 +23,7 @@ $config = $app->init();
 </head>
 
 <body>
-    <?= $config['view'] ?>
+    <?= $config['view'] ?? $config['response'] ?>
     <script type="module" src="public/js/script.js"></script>
 </body>
 
