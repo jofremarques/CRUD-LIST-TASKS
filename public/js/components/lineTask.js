@@ -19,7 +19,7 @@ export function lineTask({idValue, titleValue, dateValue, priorityValue, statusV
 
     const colPriority = document.createElement("td");
     colPriority.innerHTML = priorityValue;
-    colPriority.setAttribute("data-ref", "priority")
+    colPriority.setAttribute("data-ref", "prioridade")
 
     const colStatus = document.createElement("td");
     colStatus.innerHTML = statusValue;

@@ -19,7 +19,7 @@ class PostController extends BaseControllers
     public function handle()
     {
         try {
-            $payload = file_get_contents('php://input');
+            $payload = $_POST;
             $responsePost = $this->postUseCases->execute($payload);
 
             $this->response($responsePost);

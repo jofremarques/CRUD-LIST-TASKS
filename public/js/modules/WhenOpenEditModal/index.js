@@ -4,13 +4,15 @@ export function WhenOpenEditModal(){
         const elementButton = ev.currentTarget
         const row = elementButton.closest("tr");
        
-        const taskTitle = row.querySelector("[data-ref='titulo']")
         const {taskId} = row.querySelector("[data-task-id]").dataset
-        const editModel = document.querySelector("#edit-modal")
 
-        const spanTaskTitle = editModel.querySelector("span[data-edit-ref='titulo']")
-        spanTaskTitle.innerHTML = taskTitle.innerHTML
+        const tasks =  localStorage.getItem("tasks");
+        const currentTask = tasks.filter((task) => task.id == taskId);
         
+        Object.entries(currentTask).forEach(([label, value]) => {
+            document.querySelector(`#edit-modal #${label}]`).value = value; 
+        })
+
         const btnTaskConfirm = document.querySelector("button[data-confirm-modal='edit']")
         btnTaskConfirm.setAttribute("data-task-current", taskId) 
     }

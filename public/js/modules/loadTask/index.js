@@ -14,6 +14,7 @@ export function LoadTask() {
           }).done(function(tasks = []) {
             if(!Array.isArray(tasks)) return;
 
+            localStorage.setItem("tasks", tasks);
             tasks.forEach((task) => {
                 table.appendChild(lineTask({
                     dateValue: task.entrega,

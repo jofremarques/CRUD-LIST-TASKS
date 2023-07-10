@@ -39,8 +39,16 @@ export function CreateTask() {
             data: payload,
             context: document.body 
           }).done(function({id = 2, sucesso} = {}) {
-            const table = document.querySelector('table tbody')
+            if(!sucesso) return;
 
+            const table = document.querySelector('table tbody')            
+            const tasks = localStorage.getItem("tasks");
+            const taskCurrent = {
+                ...payload,
+                id
+            }
+
+            localStorage.setItem("tasks", Array.isArray(tasks) ? [...tasks, taskCurrent] : [taskCurrent])
             table.appendChild(lineTask({
                 dateValue: payload.entrega,
                 idValue: id,
