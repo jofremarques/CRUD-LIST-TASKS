@@ -8,10 +8,13 @@ export function WhenOpenEditModal(){
 
         let tasks = JSON.parse(localStorage.getItem("tasks")) ;
         tasks = Array.isArray(tasks) ? tasks : [] ;
+
         const currentTask = tasks.filter((task) => task.id == taskId);
         
-        currentTask.forEach(([label, value]) => {
-            document.querySelector(`#edit-modal #${label}]`).value = value; 
+        Object.entries(currentTask[0]).forEach(([label, value]) => {
+            const input = document.querySelector(`#edit-modal #${label}`);
+
+            if(input) input.value = value; 
         })
 
         const btnTaskConfirm = document.querySelector("button[data-confirm-modal='edit']")
