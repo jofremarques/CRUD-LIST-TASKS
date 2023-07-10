@@ -9,13 +9,13 @@
                 <div class="box">
                     <div class="form-group">
                         <label for="titulo">Titulo:</label>
-                        <span></span>
+                        <span id="titulo"></span>
                     </div>
                 </div>
                 <div class="box ">
                     <div class="form-group">
-                        <label for="descricao">Descrição:</label>
-                        <span></span>
+                        <label for="">Prazo de entrega:</label>
+                        <span id="entrega"></span>
                     </div>
                 </div>
             </div>
@@ -23,22 +23,20 @@
                 <div class="box">
                     <div class="form-group">
                         <label for="">Prioridade:</label>
-                        <span></span>
+                        <span id="prioridade"></span>
                     </div>
                 </div>
                 <div class="box ">
                     <div class="form-group">
                         <label for="">Status:</label>
-                        <span></span>
+                        <span id="status"></span>
                     </div>
                 </div>
             </div>
             <div class="row-modal">
-                <div class="box">
-                    <div class="form-group">
-                        <label for="">Prazo de entrega:</label>
-                        <span></span>
-                    </div>
+                <div class="form-group">
+                    <label for="descricao">Descrição:</label>
+                    <span id="descricao"></span>
                 </div>
             </div>
         </div>

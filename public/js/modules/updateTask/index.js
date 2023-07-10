@@ -1,6 +1,8 @@
 export function UpdateTask(){
 
     this.handle = (ev) => {
+      ev.preventDefault();
+      
       const element = ev.currentTarget;
       const taksId = element.dataset.taskCurrent
       const modal = element.closest(".modal");
