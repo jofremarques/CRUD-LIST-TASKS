@@ -6,10 +6,11 @@ export function WhenOpenEditModal(){
        
         const {taskId} = row.querySelector("[data-task-id]").dataset
 
-        const tasks =  localStorage.getItem("tasks");
+        let tasks = JSON.parse(localStorage.getItem("tasks")) ;
+        tasks = Array.isArray(tasks) ? tasks : [] ;
         const currentTask = tasks.filter((task) => task.id == taskId);
         
-        Object.entries(currentTask).forEach(([label, value]) => {
+        currentTask.forEach(([label, value]) => {
             document.querySelector(`#edit-modal #${label}]`).value = value; 
         })
 

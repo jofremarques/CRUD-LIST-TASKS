@@ -24,6 +24,7 @@
                     <div class="form-group">
                         <label for="">Prioridade:</label>
                         <select name="prioridade" id="prioridade">
+                            <option value="">Selecione</option>
                             <option value="baixa">baixa</option>
                             <option value="media">Media</option>
                             <option value="alta">Alta</option>
@@ -33,10 +34,12 @@
                 <div class="box ">
                     <div class="form-group">
                         <label for="">Status:</label>
-                        <select name="prioridade" id="prioridade">
-                            <option value="baixa">baixa</option>
-                            <option value="media">Media</option>
-                            <option value="alta">Alta</option>
+                        <select name="status" id="status">
+                            <option value="">Selecione</option>
+                            <option value="processando">Processando</option>
+                            <option value="em-andamento">Em andamento</option>
+                            <option value="cancelado">Cancelado</option>
+                            <option value="finalizado">Finalizado</option>
                         </select>
                     </div>
                 </div>
