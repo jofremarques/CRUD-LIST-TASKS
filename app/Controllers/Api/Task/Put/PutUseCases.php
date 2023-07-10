@@ -14,7 +14,7 @@ class PutUseCases
         $taskEntity = new TaskEntity();
 
         $taskEntity->update([
-            "id" => $payload['id']
+            "id" => intval($payload['id'])
         ], [
             "title" => $payload['titulo'],
             "estimated" => $payload['entrega'],

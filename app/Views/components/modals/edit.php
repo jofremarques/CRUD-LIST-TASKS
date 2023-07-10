@@ -10,13 +10,13 @@
                     <div class="box">
                         <div class="form-group">
                             <label for="titulo">Titulo:</label>
-                            <input type="text" id="titulo">
+                            <input type="text" id="titulo" name="titulo">
                         </div>
                     </div>
                     <div class="box ">
                         <div class="form-group">
                             <label for="descricao">Descrição:</label>
-                            <input type="text" id="descricao">
+                            <input type="text" id="descricao" name="descricao">
                         </div>
                     </div>
                 </div>

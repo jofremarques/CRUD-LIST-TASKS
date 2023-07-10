@@ -39,8 +39,10 @@ export function UpdateTask(){
         },
         context: document.body 
       }).done(function({sucesso}) {
-        
-        if(sucesso) window.location.reload()
+        if(!sucesso) return;
+
+        window.location.reload();
+        $(modal).hide();
     });
     }
 }

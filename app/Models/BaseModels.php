@@ -74,17 +74,17 @@ abstract class BaseModels extends Database
         $table = $this->table;
 
         $queryColumns = array_map(function ($index, $value) {
-            return "$index = :$value";
+            return "$index = $value";
         }, array_keys($where), array_values($where));
 
         $queryString = count($queryColumns) > 0 ? join(",", $queryColumns) : "1=1";
 
-        $dataToUpdate = join(",", array_map(function ($index, $value) {
-            return "$index = :$value";
+        $dataToUpdate = join(", ", array_map(function ($index, $value) {
+            return "$index = :$index";
         }, array_keys($data), array_values($data)));
 
         $stmt = $connect->prepare("UPDATE $table SET $dataToUpdate WHERE $queryString");
-        $stmt->execute(array_merge($where, $data));
+        $stmt->execute($data);
 
         return $connect->lastInsertId();
     }
