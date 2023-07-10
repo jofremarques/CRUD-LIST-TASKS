@@ -20,7 +20,6 @@ class PostController extends BaseControllers
     {
         try {
             $payload = file_get_contents('php://input');
-            var_dump($payload);
             $responsePost = $this->postUseCases->execute($payload);
 
             $this->response($responsePost);
